@@ -10,9 +10,12 @@ import java.util.function.Supplier;
  * To complete this exercise, implement the three methods below.
  * </p>
  * <h2>Maven guide</h2>
+ *
  * <p>When you're done, try runnig the maven 'test' task to see if your test works. This is an alternative to running
  * it in Netbeans which is important if you want to work with other IDEs or on a server (which you do!).
  * </p>
+ * @Author Schelde Jonas
+ * @Version 1.0
  */
 public class Lambda {
 
