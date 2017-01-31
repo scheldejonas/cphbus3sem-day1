@@ -1,6 +1,7 @@
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.util.concurrent.Callable;
+import java.util.concurrent.RunnableFuture;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -31,7 +32,7 @@ public class Lambda {
      * @return A {@link Runnable} created with a lamda expression.
      */
     public static Runnable createRunnable() {
-        throw new NotImplementedException();
+        return () -> System.out.println("Hello World!");
     }
 
     /**
@@ -44,7 +45,12 @@ public class Lambda {
      * @return A number generated from the producer.
      */
     public static int produce(Callable<Integer> producer) {
-        throw new NotImplementedException();
+        try {
+            return producer.call();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 
     /**
@@ -59,7 +65,10 @@ public class Lambda {
      * @return The function applied three times
      */
     public static int triple(Function<Integer, Integer> function, Supplier<Integer> supplier) {
-        throw new NotImplementedException();
+        int x = supplier.get();
+        int y = function.apply(x);
+        int z = function.apply(y);
+        return function.apply(z);
     }
 
 }
